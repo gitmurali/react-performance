@@ -111,10 +111,8 @@ function App() {
           : 'Selection Cleared',
       ),
     itemToString: item => (item ? item.name : ''),
-    // we want to override Downshift's scrollIntoView functionality because
-    // react-virtual will handle scrolling for us:
-    // 🐨 set scrollIntoView to a "no-op" function
-    // 💰 scrollIntoView: () => {},
+
+    scrollIntoView: () => {},
     // 🐨 when the highlightedIndex changes, then tell react-virtual to scroll
     // to that index.
     // 💰 onHighlightedIndexChange: ({highlightedIndex}) => highlightedIndex !== -1 && rowVirtualizer.scrollToIndex(highlightedIndex),
